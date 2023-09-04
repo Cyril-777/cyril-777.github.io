@@ -19,7 +19,7 @@
 <body>
     <br>
     <br/>
-    <div class="container">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
     <div class="container" style="z-index: 100; color: black; top: 0; position: fixed;  margin: 0 0 20px 0;">
       <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow" aria-label="Eleventh navbar example">
       <!-- DARK NAVBAR COMMENTED OUT -->
@@ -32,28 +32,28 @@
           <div class="collapse navbar-collapse" id="navbarsExample09">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about-us">About Us</a>
+                <a class="nav-link" href="about.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/membership">Membership</a>
+                <a class="nav-link" href="membership.html">Membership</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/news">News and Updates</a>
+                <a class="nav-link disabled" href="#">News and Updates</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/events">Our Events</a>
+                <a class="nav-link disabled" href="#">Our Events</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/contact-us">Contact Us</a>
+                <a class="nav-link disabled" href="#">Contact Us</a>
               </li>
             </ul>
             <div>
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="/members/login">Login</a>
+                  <a class="nav-link" href="#">Login</a>
                 </li>
               </div>
               </ul>
@@ -65,14 +65,14 @@
     </div>
     <!-- <h4>Image here with some text</h4> -->
     <main  style="height: 100vh; margin: -70px -160px 0 -160px; background:linear-gradient(70deg, rgb(255, 253, 237), #94d2fe);">
-        <div class="landing-page" style=" padding:170px ; margin-top: 10px; display: flex; height: 70vh; justify-content: space-between; align-items: center;">
+        <div class="landing-page" style=" padding:80px ; margin-top: 10px; display: flex; height: 70vh; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto;">
             <div class="text-container" style=" z-index: 10;">
                 <div class="text" style="margin-right: -100px ;">
-                    <h2 style="font-size: 54px; padding-top: 200px; color: rgb(61, 61, 61);"> You make us stronger!!</h2>
-                    <p style="color: rgb(60, 60, 60);"> We are a one big family and we care about your growth and well being.</p>
+                    <h2 style="font-size: 54px; padding-top: 200px; color: rgb(61, 61, 61);">You make us stronger!!</h2>
+                    <p style="color: rgb(60, 60, 60);">We are a one big family and we care about your growth and well being.</p>
                 </div>
                 <div class="join-link">
-                    <a href="/membership" class="btn btn-primary">Join Now!</a>
+                    <a href="membership.html" class="btn btn-primary">Join Now!</a>
                 </div>  
             </div>
             <div class="landing-image" style="  margin-top: 40px; ">
@@ -81,32 +81,45 @@
         </div>
     </main>
 
-    <h1 style="padding: 40px 0; font-size: 60px;">News <span style="color: #94d2fe;">&</span> Updates</h1>
-    <div class="row mb-2">
-        {% for post in featured_posts %}
-        <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-primary">Featured</strong>
-                    <h3 class="mb-0">{{ post.title|truncatechars:25 }}</h3>
-                    <div class="mb-1 text-muted">{{ post.created_at|date:"M d" }}</div>
-                    <p class="card-text mb-auto">{{ post.content|truncatechars:130|safe }}</p>
-                    <a href="{% url 'post_detail' post.slug %}" class="stretched-link">Continue reading</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ post.header_image.url }}" alt="{{ post.title }}" width="200" height="250">
-                </div>
+    <h1 style="padding: 40px 0; font-size: 60px; max-width: 1200px; margin: 0 auto;">News <span style="color: #94d2fe;">&</span> Updates</h1>
+    <div class="row mb-2" style="max-width: 1200px; margin: 0 auto;">
+        <div class="col-md-6" style="max-width: 1200px; margin: 0 auto;">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">World</strong>
+              <h3 class="mb-0">Featured post</h3>
+              <div class="mb-1 text-muted">Nov 12</div>
+              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="stretched-link">Continue reading</a>
             </div>
+            <div class="col-auto d-none d-lg-block">
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    
+            </div>
+          </div>
         </div>
-        {% endfor %}
-    </div>
+        <div class="col-md-6" style="max-width: 1200px; margin: 0 auto;">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0">Post title</h3>
+              <div class="mb-1 text-muted">Nov 11</div>
+              <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- START THE HIGHLIGHTS & SERVICES -->
 
-    <hr class="featurette-divider">
-    <h1 style="padding: 40px 0; font-size: 60px;">Highlights <span style="color: #94d2fe;">&</span> Services</h1>
+    <hr class="featurette-divider" style="max-width: 1200px; margin: 0 auto;">
+    <h1 style="padding: 40px 0; font-size: 60px; max-width: 1200px; margin: 0 auto;">Highlights <span style="color: #94d2fe;">&</span> Services</h1>
 
-    <div class="row featurette">
+    <div class="row featurette" style="max-width: 1200px; margin: 0 auto;">
         <div class="col-md-7">
           <h2 class="featurette-heading">Representing <span style="color:#0d6efd">Telecommunication</span> Workers. <span class="text-muted">Empowering the Industry.</span></h2>
           <p class="lead">At Telecommunication Trade Union, we are dedicated to representing the interests of telecommunication workers. Our mission is to empower the industry and ensure fair treatment for all workers.</p>
@@ -116,9 +129,9 @@
         </div>
       </div>
       
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" style="max-width: 1200px; margin: 0 auto;">
       
-      <div class="row featurette">
+      <div class="row featurette" style="max-width: 1200px; margin: 0 auto;">
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading">Advocating for <span style="color:#0d6efd">Fair Labor</span> Practices. <span class="text-muted">Your Rights, Our Priority.</span></h2>
           <p class="lead">We are committed to advocating for fair labor practices within the telecommunication industry. Our team works tirelessly to ensure that your rights and well-being are our top priority.</p>
@@ -128,9 +141,9 @@
         </div>
       </div>
       
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" style="max-width: 1200px; margin: 0 auto;">
       
-      <div class="row featurette">
+      <div class="row featurette" style="max-width: 1200px; margin: 0 auto;">
         <div class="col-md-7">
           <h2 class="featurette-heading">Educating and <span style="color:#0d6efd">Empowering</span> Members. <span class="text-muted">Knowledge is Power.</span></h2>
           <p class="lead">Telecommunication Trade Union offers educational programs and resources to empower our members. We believe that knowledge is power, and we are here to support your growth and development.</p>
@@ -140,15 +153,16 @@
         </div>
       </div>
       
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" style="max-width: 1200px; margin: 0 auto;">
 
     <!-- /END THE HIGHLIGHTS & SERVICES -->
     
-    <h1 style="font-size: 60px;">Frequently <span style="color:#0d6efd">Asked</span> Questions</h1>
-    <p class="lead">Quick answers to questions you may have.</p>
+    <br></br>
+    <h1 style="font-size: 60px; max-width: 1200px; margin: 0 auto;">Frequently <span style="color:#0d6efd">Asked</span> Questions</h1>
+    <p class="lead" style="max-width: 1200px; margin: 0 auto;">Quick answers to questions you may have.</p>
     <br></br>
 
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionExample" style="max-width: 1200px; margin: 0 auto;">
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -186,17 +200,18 @@
           </div>
         </div>
       </div>
-      <hr class="featurette-divider">
-      
-      <div class="p-5 mb-4 bg-light rounded-3">
+      <br></br>
+      <hr class="featurette-divider" style="max-width: 1200px; margin: 0 auto;">
+      <br></br>
+      <div class="p-5 mb-4 bg-light rounded-3" style="max-width: 1200px; margin: 0 auto;">
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">Need to know more?</h1>
           <p class="col-md-8 fs-4">If you're still having questions about our organization, services, or how to get involved, we're here to help. Feel free to reach out to us for further information. We're dedicated to providing you with the information and support you need.</p>
-          <a class="btn btn-primary btn-lg" type="button" href="/contact-us">Contact us</a>
+          <a class="btn btn-primary btn-lg" type="button" href="#">Contact us</a>
         </div>
       </div>
       <br></br>
-      <div class="container">{% block content %} {% endblock %}</div>
+      <div class="container"></div>
     <div class="footer container" style=" bottom: 0; position: relative; display: flex; flex-direction: column;">
       
       <div style="margin-top: 40px; margin-bottom: 30px;display: flex; justify-content: space-between;">
@@ -211,10 +226,10 @@
               <a class="footer-link" href="/home" style="color: rgb(32, 30, 30);">Home</a>
             </li>
             <li class="footer-item">
-              <a class="footer-link" href="/about-us" style="color: rgb(32, 30, 30); ">About Us</a>
+              <a class="footer-link" href="about.html" style="color: rgb(32, 30, 30); ">About Us</a>
             </li>
             <li class="footer-item">
-              <a class="footer-link" href="/membership" style="color: rgb(32, 30, 30); ">Membership</a>
+              <a class="footer-link" href="membership.html" style="color: rgb(32, 30, 30); ">Membership</a>
             </li>
             <li class="footer-item">
               <a class="footer-link" href="/news" style="color: rgb(32, 30, 30); ">News and Updates</a>
